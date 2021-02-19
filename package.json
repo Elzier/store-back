@@ -1,0 +1,33 @@
+{
+  "name": "back-store",
+  "version": "1.0.0",
+  "description": "backend-store",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elzier/store-back.git"
+  },
+  "keywords": [
+    "online-store",
+    "backend"
+  ],
+  "author": "Bohdan Boiko 13bohdanboyko@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elzier/store-back/issues"
+  },
+  "homepage": "https://github.com/Elzier/store-back#readme",
+  "dependencies": {
+    "@hapi/boom": "^9.1.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "qs": "^6.9.6",
+    "ramda": "^0.27.1"
+  }
+}
