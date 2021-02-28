@@ -10,7 +10,7 @@ const schema = new Schema({
     default: ''
   },
   price: {
-    type: String,
+    type: Number,
     default: ''
   },
   amount: {

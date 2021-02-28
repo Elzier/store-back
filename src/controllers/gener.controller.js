@@ -28,7 +28,6 @@ const generCrud = (model) => ({
     }
   },
   async update({ params: { id }, body }, res) {
-    // title: Control
     try {
       const item = await model.findByIdAndUpdate(id, body, { new: true })
       return res.status(200).send(item)

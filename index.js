@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const http = require('http')
+const cors = require('cors')
 
 const {routes} = require('./src/routes')
 
@@ -14,15 +15,17 @@ mongoose.connect(
     {
       useCreateIndex: true,
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useFindAndModify: false
     }).then(res=>{
-      console.log("DB Connected!")
+      console.log("DB Connected!")  
     }).catch(err => {
       console.log(Error, err.message);
     })
 
 // init app
 const app = express()
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
