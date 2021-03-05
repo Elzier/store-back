@@ -11,7 +11,7 @@ const {routes} = require('./src/routes')
 
 // setting connecting to DB
 mongoose.connect(
-    'mongodb://localhost:27017/onlinestore',
+    'mongodb+srv://bodia:kiwi7878Kawi@cluster0.hvajc.mongodb.net/test-db?retryWrites=true&w=majority',
     {
       useCreateIndex: true,
       useNewUrlParser: true,

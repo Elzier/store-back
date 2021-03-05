@@ -18,7 +18,6 @@ const generCrud = (model) => ({
     }
   },
   async create({ body }, res) {
-    // title: Contrlo
     try {
       const item = new model(body)
       const newItem = await item.save()
