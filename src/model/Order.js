@@ -7,11 +7,11 @@ const {
 } = require('mongoose')
 
 const schema = new Schema({
-  title: {
+  adress: {
     type: String,
     default: '',
   },
-  description: {
+  fullName: {
     type: String,
     default: '',
   },
@@ -23,20 +23,20 @@ const schema = new Schema({
     type: String,
     default: '',
   },
+  amount: {
+    type: Number,
+    default: 0,
+  },
+  clentSecret: {
+    type: String,
+    default: '',
+  },
   products: [
     {
       type: ObjectId,
       ref: 'Product',
     },
   ],
-  cleintSecret: {
-    type: String,
-    default: '',
-  },
-  amount: {
-    type: Number,
-    default: 0,
-  },
 })
 
-module.exports = model('Category', schema)
+module.exports = model('Order', schema)
