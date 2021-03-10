@@ -1,6 +1,6 @@
 const router = require("express-promise-router")()
 const { category } = require("../controllers")
-const { checkJWtSign } = require('../middlewares/checkJwt.middleware')
+const { checkJwtSign } = require('../middlewares/checkJwt.middleware')
 
 router.route('/:id').get(category.get)
 router.route('/').post(category.create)
