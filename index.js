@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -7,17 +8,13 @@ const cors = require('cors')
 const { routes } = require('./src/routes')
 
 // setting connecting to DB
-mongoose
-  .connect(
-    'mongodb+srv://bodia:kiwi7878Kawi@cluster0.hvajc.mongodb.net/test-db?retryWrites=true&w=majority',
-    {
-      useCreateIndex: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    }
-  )
-  .then((res) => {
+mongoose.connect(process.env.MONGO_URI, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+})
+  .then((_) => {
     console.log('DB Connected!')
   })
   .catch((err) => {
@@ -30,11 +27,12 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+
+// announce routes
 routes.forEach((item) => {
   app.use(`/api/v1/${item}`, require(`./src/routes/${item}`))
 })
 
-// announce routes
 const PORT = 3000
 http.createServer({}, app).listen(PORT)
 console.log(`Server running at ${PORT}`)

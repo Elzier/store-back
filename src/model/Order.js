@@ -27,9 +27,9 @@ const schema = new Schema({
     type: Number,
     default: 0,
   },
-  clentSecret: {
+  status: {
     type: String,
-    default: '',
+    default: 'Pending'
   },
   products: [
     {
